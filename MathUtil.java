@@ -13,7 +13,7 @@ public class MathUtil{
     
     public static long factorial(int operand){
         long answer = 1;
-        for (int i=1; i<operand; i++){
+        for (int i=1; i<=operand; i++){
             answer *= i;
         } return answer;
     }
