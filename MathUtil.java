@@ -1,6 +1,7 @@
 
 /**
  * Basic toolkit for quickly checking properties of numbers.
+ * The methods in this toolkit frequently use logical shortcuts to make calculations faster.
  * 
  * @author Jonah Haney (http://github.com/jdh104/)
  * @version v1.0.1
