@@ -27,6 +27,19 @@ public class MathUtil{
         }
     }
     
+    public static boolean isPrimeNumberRecursive(long operand){
+        if (operand % 2 == 0){
+            return false;
+        } else {
+            long limit = ((long) Math.floor(Math.sqrt((double) operand)));
+            for (long i=3; i<=limit; i+=2){
+                if (operand % i == 0){
+                    return false;
+                }
+            } return true;
+        }
+    }
+    
     /**
      * Used to calculate factorial of a number [f(x) = x!].
      * @param operand the number of which to calculate the factorial.
@@ -46,7 +59,7 @@ public class MathUtil{
      * @param operand the number to check
      * @return true if operand is a palendrome, false if it is not.
      */
-    public static long isPalendrome(long operand){
+    public static boolean isPalendrome(long operand){
         String op = new Long(operand).toString();
         for (int i=0; i<op.length()/2; i++){
             if (op.charAt(i) != op.charAt(op.length()-i-1)){
