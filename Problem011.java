@@ -56,6 +56,7 @@ public class Problem011{
                                             {01,70,54,71,83,51,54,69,16,92,33,48,61,43,52,01,89,19,67,48}};
     public static void main(String[] args){
         long answer = 0, nextProduct = 0;
+        String details;
         for (int x=0; x<GRID.length; x++){
             for (int y=0; y<GRID.length; y++){
                 nextProduct = 0;
@@ -63,6 +64,7 @@ public class Problem011{
                     nextProduct = GRID[y][x] * GRID[y][x+1] * GRID[y][x+2] * GRID[y][x+3]; //RIGHT
                     if (nextProduct > answer){
                         answer = nextProduct;
+                        details = "(" + (x+1) + "," + (y+1) + ")" + "RIGHT";
                     }
                 } catch (IndexOutOfBoundsException e){
                     nextProduct = 0;
@@ -70,6 +72,7 @@ public class Problem011{
                     nextProduct = GRID[y][x] * GRID[y][x-1] * GRID[y][x-2] * GRID[y][x-3]; //LEFT
                     if (nextProduct > answer){
                         answer = nextProduct;
+                        details = "(" + (x+1) + "," + (y+1) + ")" + "LEFT";
                     }
                 } catch (IndexOutOfBoundsException e){
                     nextProduct = 0;
@@ -77,6 +80,7 @@ public class Problem011{
                     nextProduct = GRID[y][x] * GRID[y+1][x] * GRID[y+2][x] * GRID[y+3][x]; //DOWN
                     if (nextProduct > answer){
                         answer = nextProduct;
+                        details = "(" + (x+1) + "," + (y+1) + ")" + "DOWN";
                     }
                 } catch (IndexOutOfBoundsException e){
                     nextProduct = 0;
@@ -84,6 +88,7 @@ public class Problem011{
                     nextProduct = GRID[y][x] * GRID[y-1][x] * GRID[y-2][x] * GRID[y-3][x]; //UP
                     if (nextProduct > answer){
                         answer = nextProduct;
+                        details = "(" + (x+1) + "," + (y+1) + ")" + "UP";
                     }
                 } catch (IndexOutOfBoundsException e){
                     nextProduct = 0;
@@ -91,6 +96,7 @@ public class Problem011{
                     nextProduct = GRID[y][x] * GRID[y+1][x+1] * GRID[y+2][x+2] * GRID[y+3][x+3]; //DOWN-RIGHT
                     if (nextProduct > answer){
                         answer = nextProduct;
+                        details = "(" + (x+1) + "," + (y+1) + ")" + "DOWN-RIGHT";
                     }
                 } catch (IndexOutOfBoundsException e){
                     nextProduct = 0;
@@ -98,6 +104,7 @@ public class Problem011{
                     nextProduct = GRID[y][x] * GRID[y+1][x-1] * GRID[y+2][x-2] * GRID[y+3][x-3]; //DOWN-LEFT
                     if (nextProduct > answer){
                         answer = nextProduct;
+                        details = "(" + (x+1) + "," + (y+1) + ")" + "DOWN-LEFT";
                     }
                 } catch (IndexOutOfBoundsException e){
                     nextProduct = 0;
@@ -105,6 +112,7 @@ public class Problem011{
                     nextProduct = GRID[y][x] * GRID[y-1][x-1] * GRID[y-2][x-2] * GRID[y-3][x-3]; //UP-LEFT
                     if (nextProduct > answer){
                         answer = nextProduct;
+                        details = "(" + (x+1) + "," + (y+1) + ")" + "UP-LEFT";
                     }
                 } catch (IndexOutOfBoundsException e){
                     nextProduct = 0;
@@ -112,6 +120,7 @@ public class Problem011{
                     nextProduct = GRID[y][x] * GRID[y-1][x+1] * GRID[y-2][x+2] * GRID[y-3][x+3]; //UP-RIGHT
                     if (nextProduct > answer){
                         answer = nextProduct;
+                        details = "(" + (x+1) + "," + (y+1) + ")" + "UP-RIGHT";
                     }
                 } catch (IndexOutOfBoundsException e){
                     nextProduct = 0;
@@ -119,5 +128,6 @@ public class Problem011{
             }
         }
         System.out.println(answer);
+        System.out.println("Found at: " + details);
     }
 }
