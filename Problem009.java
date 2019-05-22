@@ -27,10 +27,9 @@ public class Problem009{
     public static long getAnswer(){
         for (long c=0; c<SUM; c++){
             for (long b=0; b<c; b++){
-                for (long a=0; a<b; a++){
-                    if ((Math.pow(a,2) + Math.pow(b,2) == Math.pow(c,2)) && (a + b + c == SUM)){
-                        return a * b * c;
-                    }
+                long a = SUM - (b + c);
+                if (Math.pow(a,2) + Math.pow(b,2) == Math.pow(c,2)){
+                    return a * b * c;
                 }
             }
         } return (-1L);
